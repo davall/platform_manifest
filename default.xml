@@ -12,14 +12,16 @@
            fetch="https://github.com" />
   <remote name="abc"
            fetch="https://github.com/ezio84/" />
-  <remote name="substratum"
-           fetch="https://github.com/substratum/" />
   <remote name="nathan"
            fetch="https://github.com/nathanchance/"
            sync-c="true"
            sync-j="8" />
   <remote name="davall"
            fetch="https://github.com/davall/" />
+  <remote name="gitlab"
+           fetch="https://gitlab.com/Surge1223/"
+           sync-c="true"
+           sync-j="8" />
 
   <!-- davall repos -->
   <project path="manifest" name="platform_manifest" remote="davall" revision="abc81" />
@@ -32,18 +34,30 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <!-- Device Source -->
-  <project path="device/google/taimen" name="android_device_google_taimen" groups="pdk" remote="me" revision="o-mr1" />
-  <project path="device/google/wahoo" name="android_device_google_wahoo" groups="pdk" remote="me" revision="android-8.1" />
 
-  <!-- davall kernels -->
-  <!-- Kernel Source -->
+  <!-- Device Source -->
+  <project path="device/google/taimen" name="android_device_google_taimen" groups="pdk" remote="davall" revision="abc81" />
+  <project path="device/google/wahoo" name="android_device_google_wahoo" groups="pdk" remote="davall" revision="abc81" />
+
+  <!-- Nathans Kernel Source -->
   <project path="kernel/google/taimen" name="wahoo" groups="device,wahoo" remote="nathan" revision="oreo-mr1"  />
+
+  <!-- Vendor Source -->
+  <project path="vendor/pure" name="android_vendor_pure" groups="pdk" remote="davall" revision="abc81" />
+  <project path="vendor/google" name="proprietary_vendor_google" groups="pdk" remote="davall" revision="abc81" />
+  <project path="vendor/nexus" name="abc_vendor_nexus" groups="pdk" remote="davall" revision="abc81" />
+  <project path="vendor/gapps" name="vendor_gapps" clone-depth="1" remote="gitlab" revision="o-mr1" />
+
+  <!-- Platform Source -->
+  <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="easel"  remote="aosp"  />
+  <project path="system/update_engine" name="system_update_engine" remote="davall" revision="abc81" />
+  <project path="system/core" name="android_system_core" remote="davall" revision="abc81" />
 
   <!-- Scripts -->
   <project path="scripts" name="scripts" remote="abc" revision="o2" />
   <!-- <project path="scripts/vendor-blobs-extractfromfactory" name="vendor-blobs-extractfromfactory" remote="abc" revision="o2" />-->
   <project path="scripts/enjarify-prebuiltApkExtraction" name="enjarify-prebuiltApkExtraction" remote="abc" revision="o2" />
+
   <!-- ABC Repo's -->
   <project path="build/soong" name="abc_build_soong" remote="abc" revision="o2" groups="pdk,tradefed" >
     <linkfile src="root.bp" dest="Android.bp" />
@@ -79,14 +93,9 @@
   <project path="packages/services/Telecomm" name="abc_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="abc" revision="o2" />
   <project path="packages/services/Telephony" name="abc_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="abc" revision="o2" />
   <project path="external/toybox" name="abc_external_toybox" groups="pdk" remote="abc" revision="o2" />
-  <project path="system/core" name="abc_system_core" groups="pdk" remote="abc" revision="o2" />
   <project path="system/extras" name="abc_system_extras" groups="pdk" remote="abc" revision="o2" />
   <project path="system/media" name="abc_system_media" groups="pdk" remote="abc" revision="o2" />
   <project path="system/sepolicy" name="abc_system_sepolicy" groups="pdk" remote="abc" revision="o2" />
-  <project path="vendor/nexus" name="abc_vendor_nexus" remote="abc" revision="o2" />
-
-    <!-- Substratum
-  <project path="packages/services/ThemeInterfacer" name="interfacer" remote="substratum" revision="n-rootless" />-->
 
   <!-- Angler trees -->
   <project path="device/huawei/angler" name="abc_device_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="abc" revision="o2" />
@@ -551,7 +560,6 @@
   <project path="system/timezone" name="platform/system/timezone" groups="pdk" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" />
   <project path="system/tpm" name="platform/system/tpm" />
-  <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="test/framework" name="platform/test/framework" groups="vts,pdk-fs" />
   <project path="test/vts" name="platform/test/vts" groups="vts,pdk-fs" />
