@@ -14,6 +14,10 @@
            fetch="https://github.com/ezio84/" />
   <remote name="substratum"
            fetch="https://github.com/substratum/" />
+  <remote name="nathan"
+           fetch="https://github.com/nathanchance/"
+           sync-c="true"
+           sync-j="8" />
   <remote name="davall"
            fetch="https://github.com/davall/" />
 
@@ -28,7 +32,14 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
+  <!-- Device Source -->
+  <project path="device/google/taimen" name="android_device_google_taimen" groups="pdk" remote="me" revision="o-mr1" />
+  <project path="device/google/wahoo" name="android_device_google_wahoo" groups="pdk" remote="me" revision="android-8.1" />
+
   <!-- davall kernels -->
+  <!-- Kernel Source -->
+  <project path="kernel/google/taimen" name="wahoo" groups="device,wahoo" remote="nathan" revision="oreo-mr1"  />
+
   <!-- Scripts -->
   <project path="scripts" name="scripts" remote="abc" revision="o2" />
   <!-- <project path="scripts/vendor-blobs-extractfromfactory" name="vendor-blobs-extractfromfactory" remote="abc" revision="o2" />-->
