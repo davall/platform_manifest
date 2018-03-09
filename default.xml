@@ -14,7 +14,12 @@
            fetch="https://github.com/ezio84/" />
   <remote name="substratum"
            fetch="https://github.com/substratum/" />
+  <remote name="davall"
+           fetch="https://github.com/davall/" />
 
+  <!-- davall repos -->
+  <project path="manifest" name="platform_manifest" remote="davall" revision="abc81" />
+  <!-- davall kernels -->
   <!-- Scripts -->
   <project path="scripts" name="scripts" remote="abc" revision="o2" />
   <!-- <project path="scripts/vendor-blobs-extractfromfactory" name="vendor-blobs-extractfromfactory" remote="abc" revision="o2" />-->
@@ -33,7 +38,6 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="manifest" name="abc_manifest" remote="abc" revision="o2" />
   <project path="bootable/recovery" name="abc_bootable_recovery" groups="pdk" remote="abc" revision="o2" />
   <!-- <project path="external/busybox" name="abc_external_busybox" remote="abc" revision="o2" />-->
   <project path="external/DUtils" name="abc_external_DUtils" remote="abc" revision="o2" />
