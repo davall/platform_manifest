@@ -36,8 +36,8 @@
   </project>
 
   <!-- Device Source -->
-  <project path="device/google/taimen" name="android_device_google_taimen" groups="pdk" remote="davall" revision="abc81" />
-  <project path="device/google/wahoo" name="android_device_google_wahoo" groups="pdk" remote="davall" revision="abc81" />
+  <project path="device/google/taimen" name="device_google_taimen" groups="pdk" remote="davall" revision="abc81" />
+  <project path="device/google/wahoo" name="device_google_wahoo" groups="pdk" remote="davall" revision="abc81" />
 
   <!-- Nathans Kernel Source -->
   <project path="kernel/google/taimen" name="wahoo" groups="device,wahoo" remote="nathan" revision="oreo-mr1"  />
