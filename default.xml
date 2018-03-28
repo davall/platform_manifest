@@ -22,6 +22,9 @@
            fetch="https://gitlab.com/Surge1223/"
            sync-c="true"
            sync-j="8" />
+  <remote  name="trees"
+           fetch="https://github.com/noobtrees/" 
+           sync-j="6" />
 
   <!-- davall repos -->
   <project path="manifest" name="platform_manifest" remote="davall" revision="abc81" />
@@ -39,8 +42,12 @@
   <project path="device/google/taimen" name="device_google_taimen" groups="pdk" remote="davall" revision="abc81" />
   <project path="device/google/wahoo" name="device_google_wahoo" groups="pdk" remote="davall" revision="abc81" />
 
-  <!-- Nathans Kernel Source -->
+  <!-- Nathans Kernel Source
   <project path="kernel/google/taimen" name="wahoo" groups="device,wahoo" remote="nathan" revision="oreo-mr1"  />
+  -->
+
+  <!-- fwhem kernels -->
+  <project path="kernel/google/taimen" name="kernel_google_wahoo" groups="device,wahoo" remote="trees" revision="o81m" />
 
   <!-- Vendor Source -->
   <project path="vendor/pure" name="android_vendor_pure" groups="pdk" remote="davall" revision="abc81" />
