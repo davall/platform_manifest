@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/"
            sync-c="true" />
-  <default revision="refs/tags/android-8.1.0_r15"
+  <default revision="refs/tags/android-8.1.0_r20"
            remote="aosp"
            sync-j="4" />
   <remote  name="github"
@@ -18,6 +18,12 @@
            sync-j="8" />
   <remote name="davall"
            fetch="https://github.com/davall/" />
+   <remote name="surge"
+           fetch="https://github.com/Surge1223"
+           sync-c="true"
+           revision="o+"
+           sync-f="true"
+           sync-j="8" />
   <remote name="gitlab"
            fetch="https://gitlab.com/Surge1223/"
            sync-c="true"
@@ -28,7 +34,7 @@
 
   <!-- davall repos -->
   <project path="manifest" name="platform_manifest" remote="davall" revision="abc81" />
-  <project path="build/make" name="platform_build_make" groups="pdk" remote="davall" revision="abc81" >
+  <project path="build/make" name="platform_build_make" groups="pdk" remote="davall" revision="o2" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -39,26 +45,27 @@
   </project>
 
   <!-- Device Source -->
-  <project path="device/google/taimen" name="device_google_taimen" groups="pdk" remote="davall" revision="abc81" />
-  <project path="device/google/wahoo" name="device_google_wahoo" groups="pdk" remote="davall" revision="abc81" />
+  <project path="device/google/taimen" name="device_google_taimen" groups="pdk" remote="davall" revision="o2" />
+  <project path="device/google/wahoo" name="device_google_wahoo" groups="pdk" remote="davall" revision="o2" />
 
-  <!-- Nathans Kernel Source
-  <project path="kernel/google/taimen" name="wahoo" groups="device,wahoo" remote="nathan" revision="oreo-mr1"  />
-  -->
-
-  <!-- fwhem kernels -->
+  <!-- fwhem kernels 
   <project path="kernel/google/taimen" name="kernel_google_wahoo" groups="device,wahoo" remote="trees" revision="o81m" />
+  -->
+  <!-- surge taimen kernels -->
+  <project path="kernel/google/taimen" name="android_kernel_google_taimen" groups="device,taimen,broadcom_pdk" remote="surge" revision="android-msm-wahoo-4.4-oreo-m2" />
 
   <!-- Vendor Source -->
-  <project path="vendor/pure" name="android_vendor_pure" groups="pdk" remote="davall" revision="abc81" />
-  <project path="vendor/google" name="proprietary_vendor_google" groups="pdk" remote="davall" revision="abc81" />
-  <project path="vendor/nexus" name="abc_vendor_nexus" groups="pdk" remote="davall" revision="abc81" />
+  <project path="vendor/pure" name="android_vendor_pure" groups="pdk" remote="davall" revision="o2" />
+  <project path="vendor/google" name="proprietary_vendor_google" groups="pdk" remote="davall" revision="o2" />
+  <project path="vendor/nexus" name="abc_vendor_nexus" groups="pdk" remote="davall" revision="o2" />
   <project path="vendor/gapps" name="vendor_gapps" clone-depth="1" remote="gitlab" revision="o-mr1" />
 
   <!-- Platform Source -->
   <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="easel"  remote="aosp"  />
-  <project path="system/update_engine" name="system_update_engine" remote="davall" revision="abc81" />
-  <project path="system/core" name="android_system_core" remote="davall" revision="abc81" />
+  <!-- Platform Source
+  <project path="system/update_engine" name="system_update_engine" remote="davall" revision="o2" />
+  -->
+  <project path="system/core" name="android_system_core" remote="davall" revision="o2" />
 
   <!-- Scripts -->
   <project path="scripts" name="scripts" remote="abc" revision="o2" />
@@ -71,7 +78,6 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="bootable/recovery" name="abc_bootable_recovery" groups="pdk" remote="abc" revision="o2" />
-  <!-- <project path="external/busybox" name="abc_external_busybox" remote="abc" revision="o2" />-->
   <project path="external/DUtils" name="abc_external_DUtils" remote="abc" revision="o2" />
   <!-- <project path="external/wpa_supplicant_8" name="abc_external_wpa_supplicant_8" groups="pdk" remote="abc" revision="o2" />-->
   <project path="frameworks/av" name="abc_frameworks_av" groups="pdk" remote="abc" revision="o2" />
@@ -85,7 +91,6 @@
   <project path="packages/apps/CellBroadcastReceiver" name="abc_packages_apps_CellBroadcastReceiver" groups="pdk-fs" remote="abc" revision="o2" />
   <project path="packages/apps/Contacts" name="abc_packages_apps_Contacts" groups="pdk-fs" remote="abc" revision="o2" />
   <project path="packages/apps/Dialer" name="abc_packages_apps_Dialer" groups="pdk-fs" remote="abc" revision="o2" />
-  <!-- <project path="packages/apps/DSPlibs" name="abc_packages_apps_DSPlibs" remote="abc" revision="o2" />-->
   <project path="packages/apps/DUI" name="abc_packages_apps_DUI" remote="abc" revision="o2" />
   <project path="packages/apps/Launcher3" name="abc_packages_apps_Launcher3" remote="abc" revision="o2" />
   <project path="packages/apps/MusicFX" name="abc_packages_apps_MusicFX" groups="pdk-fs" remote="abc" revision="o2" />
@@ -369,6 +374,7 @@
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
   <project path="external/toolchain-utils" name="platform/external/toolchain-utils" />
   <project path="external/tpm2" name="platform/external/tpm2" groups="pdk" />
+  <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="external/trappy" name="platform/external/trappy" groups="pdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" />
   <project path="external/unicode" name="platform/external/unicode" groups="pdk" />
