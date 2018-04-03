@@ -109,11 +109,11 @@
   <project path="system/media" name="abc_system_media" groups="pdk" remote="abc" revision="o2" />
   <project path="system/sepolicy" name="abc_system_sepolicy" groups="pdk" remote="abc" revision="o2" />
 
-  <!-- Angler trees -->
+  <!-- Angler trees 
   <project path="device/huawei/angler" name="abc_device_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="abc" revision="o2" />
   <project path="kernel/huawei/angler" name="abc_kernel_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="abc" revision="o2-upstream" />
   <project path="vendor/huawei" name="abc_vendor_huawei" remote="abc" revision="o2" />
-
+  -->
   <!-- AOSP trees -->
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
