@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/"
            sync-c="true" />
-  <default revision="refs/tags/android-8.1.0_r20"
+  <default revision="refs/tags/android-8.1.0_r28"
            remote="aosp"
            sync-j="4" />
   <remote  name="github"
@@ -28,12 +28,21 @@
            fetch="https://gitlab.com/Surge1223/"
            sync-c="true"
            sync-j="8" />
+  <remote name="hbergmann"
+           fetch="https://gitlab.com/hbergmann/"
+           sync-c="true"
+           sync-j="8" />
   <remote  name="trees"
            fetch="https://github.com/noobtrees/" 
            sync-j="6" />
 
   <!-- davall repos -->
   <project path="manifest" name="platform_manifest" remote="davall" revision="abc81" />
+  <!-- davall frameworks 
+  <project path="frameworks/base" name="abc_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="hbergmann" revision="o2" />
+  -->
+  <project path="system/core" name="android_system_core" remote="davall" revision="o2" />
+  <project path="system/sepolicy" name="abc_system_sepolicy" groups="pdk" remote="davall" revision="o2" />
   <project path="build/make" name="platform_build_make" groups="pdk" remote="davall" revision="o2" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -48,24 +57,16 @@
   <project path="device/google/taimen" name="device_google_taimen" groups="pdk" remote="davall" revision="o2" />
   <project path="device/google/wahoo" name="device_google_wahoo" groups="pdk" remote="davall" revision="o2" />
 
-  <!-- fwhem kernels 
-  <project path="kernel/google/taimen" name="kernel_google_wahoo" groups="device,wahoo" remote="trees" revision="o81m" />
-  -->
-  <!-- surge taimen kernels -->
-  <project path="kernel/google/taimen" name="android_kernel_google_taimen" groups="device,taimen,broadcom_pdk" remote="surge" revision="android-msm-wahoo-4.4-oreo-m2" />
-
   <!-- Vendor Source -->
-  <project path="vendor/pure" name="android_vendor_pure" groups="pdk" remote="davall" revision="o2" />
   <project path="vendor/google" name="proprietary_vendor_google" groups="pdk" remote="davall" revision="o2" />
   <project path="vendor/nexus" name="abc_vendor_nexus" groups="pdk" remote="davall" revision="o2" />
-  <project path="vendor/gapps" name="vendor_gapps" clone-depth="1" remote="gitlab" revision="o-mr1" />
+  <project path="vendor/gapps" name="vendor_gapps" clone-depth="1" remote="hbergmann" revision="o2" />
+
+  <!-- fwhem kernels -->
+  <project path="kernel/google/taimen" name="kernel_google_wahoo" groups="device,wahoo" remote="trees" revision="o81m" />
 
   <!-- Platform Source -->
-  <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="easel"  remote="aosp"  />
-  <!-- Platform Source
-  <project path="system/update_engine" name="system_update_engine" remote="davall" revision="o2" />
-  -->
-  <project path="system/core" name="android_system_core" remote="davall" revision="o2" />
+  <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="easel"  remote="aosp" />
 
   <!-- Scripts -->
   <project path="scripts" name="scripts" remote="abc" revision="o2" />
@@ -79,7 +80,6 @@
   </project>
   <project path="bootable/recovery" name="abc_bootable_recovery" groups="pdk" remote="abc" revision="o2" />
   <project path="external/DUtils" name="abc_external_DUtils" remote="abc" revision="o2" />
-  <!-- <project path="external/wpa_supplicant_8" name="abc_external_wpa_supplicant_8" groups="pdk" remote="abc" revision="o2" />-->
   <project path="frameworks/av" name="abc_frameworks_av" groups="pdk" remote="abc" revision="o2" />
   <project path="frameworks/base" name="abc_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="abc" revision="o2" />
   <project path="frameworks/native" name="abc_frameworks_native" groups="pdk" remote="abc" revision="o2" />
@@ -107,13 +107,7 @@
   <project path="external/toybox" name="abc_external_toybox" groups="pdk" remote="abc" revision="o2" />
   <project path="system/extras" name="abc_system_extras" groups="pdk" remote="abc" revision="o2" />
   <project path="system/media" name="abc_system_media" groups="pdk" remote="abc" revision="o2" />
-  <project path="system/sepolicy" name="abc_system_sepolicy" groups="pdk" remote="abc" revision="o2" />
 
-  <!-- Angler trees 
-  <project path="device/huawei/angler" name="abc_device_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="abc" revision="o2" />
-  <project path="kernel/huawei/angler" name="abc_kernel_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="abc" revision="o2-upstream" />
-  <project path="vendor/huawei" name="abc_vendor_huawei" remote="abc" revision="o2" />
-  -->
   <!-- AOSP trees -->
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
