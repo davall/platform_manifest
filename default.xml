@@ -43,6 +43,7 @@
   -->
   <project path="system/core" name="android_system_core" remote="davall" revision="o2" />
   <project path="system/sepolicy" name="abc_system_sepolicy" groups="pdk" remote="davall" revision="o2" />
+  <project path="external/selinux" name="abc_external_selinux" remote="davall" revision="o2" />
   <project path="build/make" name="platform_build_make" groups="pdk" remote="davall" revision="o2" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -339,7 +340,6 @@
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
   <project path="external/seccomp-tests" name="platform/external/seccomp-tests" groups="pdk" />
-  <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
   <project path="external/shflags" name="platform/external/shflags" groups="pdk" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" />
   <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" />
