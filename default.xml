@@ -108,7 +108,7 @@
   <project path="external/toybox" name="abc_external_toybox" groups="pdk" remote="abc" revision="o2" />
   <project path="system/extras" name="abc_system_extras" groups="pdk" remote="abc" revision="o2" />
   <project path="system/media" name="abc_system_media" groups="pdk" remote="abc" revision="o2" />
-
+  <project path="system/vold" name="abc_system_vold" remote="abc" revision="o2" />
   <!-- AOSP trees -->
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
@@ -567,7 +567,6 @@
   <project path="system/timezone" name="platform/system/timezone" groups="pdk" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" />
   <project path="system/tpm" name="platform/system/tpm" />
-  <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="test/framework" name="platform/test/framework" groups="vts,pdk-fs" />
   <project path="test/vts" name="platform/test/vts" groups="vts,pdk-fs" />
   <project path="test/vts-testcase/fuzz" name="platform/test/vts-testcase/fuzz" groups="vts,pdk-fs" />
